@@ -6,8 +6,6 @@ date: 2022-06-21T02:03:56.429Z
 
 ## An Open Source Site Builder
 
-<hr>
-
 ### Getting Started
 
 #### Want to try Hotplate for yourself?
