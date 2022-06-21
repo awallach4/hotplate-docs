@@ -1,3 +1,0 @@
-/*
-  X-XSS-PROTECTION: 1; mode=block
-  CONTENT-SECURITY-POLICY: default-src: 'self';
