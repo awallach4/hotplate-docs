@@ -8,7 +8,7 @@ date: 2022-06-21T02:03:56.429Z
 
 **This documentation is a work-in-progress.**
 
-![Hotplate Sites Logo](/media/hotplate-sites-logo.png)
+![Hotplate Sites Logo](/.vuepress/public/media/hotplate-sites-logo.png)
 
 ### Getting Started
 
