@@ -2,15 +2,13 @@
 title: Hotplate Documentation
 date: 2022-06-21T02:03:56.429Z
 ---
-
-
-![Hotplate Sites Logo](/media/hotplate-sites-logo.png)
-
 # Hotplate Sites
 
 ## An Open Source Site Builder
 
 **This documentation is a work-in-progress.**
+
+![Hotplate Sites Logo](/media/hotplate-sites-logo.png)
 
 ### Getting Started
 
