@@ -1,11 +1,10 @@
 ---
-title: Home
-date: 2022-06-21T02:03:56.429Z
+home: true
+heroText: Hotplate Sites
+heroImage: /media/hotplate-sites-logo.png
+actionText: Get Started →
+actionLink: /introduction
+footer: MIT Licensed | Copyright © 2022 Alex Wallach
 ---
-# Hotplate Sites
-
-## An Open Source Site Builder
-
-![Hotplate Sites Logo](media/hotplate-sites-logo.png)
 
 **This documentation is a work-in-progress.**
