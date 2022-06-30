@@ -4,7 +4,7 @@ heroText: Hotplate Sites
 tagLine: An Open Source Site Builder
 heroImage: /media/hotplate-sites-logo.png
 actionText: Get Started →
-actionLink: /docs/
+actionLink: /guide/
 footer: MIT Licensed | Copyright © 2022 Alex Wallach
 ---
 
