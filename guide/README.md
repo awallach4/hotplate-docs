@@ -4,6 +4,8 @@ date: 2022-06-30T01:08:52.134Z
 ---
 # Getting Started
 
+![](media/img_0470.jpg)
+
 ## Want to try Hotplate for yourself?
 
 Head on over to [hotplate-demo.web.app](https://hotplate-demo.web.app) and use the login information below to sign in as either a webmaster or basic user so you can see what Hotplate is capable of (sorry, no admin logins; never trust a client!). If you want to see Hotplate's user management dashboard in action, you'll have to create your own site.
