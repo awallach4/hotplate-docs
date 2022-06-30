@@ -29,7 +29,7 @@ Many free site builders already exist on the internet, such as Google Sites, Wor
 
 Oh, and did I mention, there's no "catch" to Hotplate being free. I'm not asking for sponsors, donations, subscriptions, premium version fees, ad-free fees, or anything like that. Aside from what you pay Firebase for the backend and your hosting domain (if you choose to buy a different one), your site is free! Just make sure to follow the terms of the attached license file.
 
-### Dependencies
+## Dependencies
 
 Hotplate would not be possible without the following libraries:
 
