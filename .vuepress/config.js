@@ -8,6 +8,6 @@ module.exports = {
   ],
   themeConfig: {
     repo: "awallach4/hotplate-sites",
-    sidebar: "auto"
+    displayAllHeaders: true
   }
 }
