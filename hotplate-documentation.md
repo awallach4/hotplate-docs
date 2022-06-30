@@ -1,5 +1,5 @@
 ---
-title: Hotplate Documentation
+title: Introduction
 date: 2022-06-30T01:08:52.134Z
 ---
 # Hotplate Sites
