@@ -14,7 +14,6 @@ module.exports = {
       { text: "Guide", link: "/guide/" }
     ],
     sidebar: getSidebar(),
-    lastUpdated: "Last Updated",
     smoothScroll: true
   }
 }
