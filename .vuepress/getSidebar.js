@@ -7,6 +7,8 @@ module.exports = function () {
     var filename = files[i].split(".").slice(0, -1).join(".");
     if (filename.toLowerCase() !== "readme") {
       list.push(`/guide/${filename}`);
+    } else {
+      list.push("/guide/");
     }
   }
   console.log("./guide/: ", list);
