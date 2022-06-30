@@ -9,6 +9,6 @@ module.exports = function () {
       list.push(filename);
     }
   }
-  console.log(`${path}: `, list);
+  console.log("./guide/: ", list);
   return list;
 }
