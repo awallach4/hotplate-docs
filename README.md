@@ -14,5 +14,3 @@ features:
   details: You don't need to know a thing about hosting a server to use Hotplate.  Your Hotplate site is backed by Google's secure and performant services, such as Cloud Firestore, Firebase Authentication, Cloud Storage, and reCaptcha v3.  We've even written security rules for you, so all you need to do is deploy them!
 footer: MIT Licensed | Copyright © 2022 Alex Wallach
 ---
-
-**This documentation is a work-in-progress.**
