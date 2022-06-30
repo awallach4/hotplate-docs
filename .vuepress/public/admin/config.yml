@@ -9,9 +9,9 @@ public_folder: "media"
 publish_mode: editorial_workflow
 
 collections:
-  - name: "docs" # Used in routes, e.g., /admin/collections/blog
-    label: "Documentation" # Used in the UI
-    folder: "docs" # The path to the folder where the documents are stored
+  - name: "guide" # Used in routes, e.g., /admin/collections/blog
+    label: "Guide" # Used in the UI
+    folder: "guide" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
