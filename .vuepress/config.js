@@ -10,6 +10,11 @@ module.exports = {
   ],
   themeConfig: {
     repo: "awallach4/hotplate-sites",
-    sidebar: getSidebar()
+    nav: [
+      { text: "Guide", link: "/guide/" }
+    ],
+    sidebar: getSidebar(),
+    lastUpdated: "Last Updated",
+    smoothScroll: true
   }
 }
