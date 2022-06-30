@@ -1,3 +1,5 @@
+var getSidebar = require("./getSidebar")
+
 module.exports = {
   title: "Hotplate Sites",
   description: "An Open Source Site Builder",
@@ -8,6 +10,10 @@ module.exports = {
   ],
   themeConfig: {
     repo: "awallach4/hotplate-sites",
-    displayAllHeaders: true
+    nav: [
+      { text: "Guide", link: "/guide/" }
+    ],
+    sidebar: getSidebar(),
+    smoothScroll: true
   }
 }
