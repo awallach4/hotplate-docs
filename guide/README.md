@@ -4,7 +4,7 @@ date: 2022-06-30T01:08:52.134Z
 ---
 # Getting Started
 
-![](media/hotplate-sites-logo.png)
+![](media/img_0470.jpg)
 
 ## Want to try Hotplate for yourself?
 
