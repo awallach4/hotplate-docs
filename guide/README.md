@@ -4,7 +4,7 @@ date: 2022-06-30T01:08:52.134Z
 ---
 # Getting Started
 
-![](../../eagle-scout-graduation-photo-prints.png)
+![](guide/eagle-scout-graduation-photo-prints.png)
 
 ## Want to try Hotplate for yourself?
 
