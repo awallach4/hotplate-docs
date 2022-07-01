@@ -53,9 +53,13 @@ A backend without any resources is not very useful.  To start, add two web apps 
 
 Hotplate uses Cloud Functions to enable multi-role authentication, delete user account data when a user deletes their account, and make weekly backups of your database.  Unfortunately, due to changes that Google made a few years ago, you must subscribe to the "Blaze" billing plan to be able to use Cloud Functions.  While this requires creating a billing account, you'll only be charged a few cents per month.  As soon as any change to this is made in the future, I will work diligently to update Hotplate to implement that change.  For now, set up your billing account and then set the location for your functions to a region close to your users.  Then, go back to Cloud Storage and create another bucket in a region close to your users for your weekly Firestore backups if you want them to occur.
 
-### Step 4: Setting Up Your Domain (Optional)
+### Step 4: Setting Up App Check
 
-If you plan to use a custom domain for your site, go buy one from [Google Domains](https://domains.google) or another provider of your choice.  Once you have a domain, follow [these instructions](https://firebase.google.com/docs/hosting/custom-domain?hl=en&authuser=0) to connect it to Firebase Hosting and [these instructions](https://firebase.google.com/docs/auth/email-custom-domain?hl=en&authuser=0) to set up emails from Firebase Authentication (don't worry, these articles explain how to do this much better than I could).
+Firebase has a security feature called App Check that integrated with reCaptcha v3 to prevent abusive traffic, such as robots, from accessing your site.  Additionally, App Check prevents users from accessing your site by stealing the configuration for your site and hosting it elsewhere.  To set up App Check, first set up your site with reCaptcha v3 by creating a new site in the [reCaptcha admin panel](https://google.com/recaptcha/admin).  Once this is done, copy the secret key and use it to register your apps with reCaptcha v3 in the Firebase Console.  **Do not share this key with anyone!  Also, only add your production domains to the list of authorized domains in the reCaptcha admin panel.**
+
+### Step 5: Setting Up Your Domain (Optional)
+
+If you plan to use a custom domain for your site, go buy one from [Google Domains](https://domains.google) or another provider of your choice.  Once you have a domain, follow [these instructions](https://firebase.google.com/docs/hosting/custom-domain?hl=en&authuser=0) to connect it to Firebase Hosting and [these instructions](https://firebase.google.com/docs/auth/email-custom-domain?hl=en&authuser=0) to set up emails from Firebase Authentication (don't worry, these articles explain how to do this much better than I could).  Then, add your custom domain to the list of authorized domains in the reCaptcha admin panel for your site.
 
 ## Part 3: Configuring Hotplate
 
