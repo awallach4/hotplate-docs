@@ -51,7 +51,7 @@ A backend without any resources is not very useful.  To start, add two web apps 
 
 ### Step 3: Setting Up Cloud Functions
 
-Hotplate uses Cloud Functions to enable multi-role authentication, delete user account data when a user deletes their account, and make weekly backups of your database.  Unfortunately, due to changes that Google made a few years ago, you must subscribe to the "Blaze" billing plan to be able to use Cloud Functions.  While this requires creating a billing account, you'll only be charged a few cents per month.  As soon as any change to this is made in the future, I will work diligently to update Hotplate to implement that change.  For now, set up your billing account and then set the location for your functions to a region close to your users.  Then, go back to Cloud Storage and create another bucket in a region close to your users for your weekly Firestore backups if you want them to occur.
+Hotplate uses Cloud Functions to enable multi-role authentication, delete user account data when a user deletes their account, and make weekly backups of your database.  Unfortunately, due to changes that Google made a few years ago, you must subscribe to the "Blaze" billing plan to be able to use Cloud Functions.  While this requires creating a billing account, you'll only be charged a few cents per month.  As soon as any change to this is made in the future, I will work diligently to update Hotplate to implement that change.  For now, set up your billing account and then set the location for your functions to a region close to your users, if it needs to be set.  Then, go back to Cloud Storage and create another bucket in a region close to your users for your weekly Firestore backups if you want them to occur.
 
 ### Step 4: Setting Up App Check
 
@@ -144,7 +144,7 @@ Replace all of the files in this folder, except for `robots.txt` and `profile.pn
 
 #### `client/src/CLIENT_CONFIG.ts` and `console/src/CONSOLE_CONFIG.ts`
 
-Replace all of the placeholders with the applicable values.  If you do not plan to use the calendar service, remove the placeholders, but only delete what is in between the quotation marks.  For the `firebaseConfig` variable, go to the project settings page on the Firebase Console and copy the object for the client app.  For the `recaptchaSiteKey` variable, go to the reCaptcha console and copy the site key for your site.
+Replace all of the placeholders with the applicable values.  If you do not plan to use the calendar service, remove the placeholders, but only delete what is in between the quotation marks, otherwise follow the guide on the email and calendar services to learn what to paste here.  For the `firebaseConfig` variable, go to the project settings page on the Firebase Console and copy the object for the client app.  For the `recaptchaSiteKey` variable, go to the reCaptcha console and copy the site key for your site.
 
 #### `console/index.html`
 
@@ -158,3 +158,21 @@ If you want to backup your Firestore database, replace the placeholder for the `
 * `scheduledFirestoreExport,`
 
 Congratulations!  You just configured your site for deployment!
+
+## Part 4: Deploying Your Site
+
+Your backend is now set up and you've configured Hotplate for your site.  Now, it's time to put your site on the internet!  Before going live, there are a few more things to do.
+
+### Step 1: Building Your Site's Code
+
+If you were to look through all of the files in your project, you probably would not understand it without coding experience, but it would at least look like the bits of HTML and Javascript that you have seen.  While these files contain code that is functional, each file contains only a snippet of your site.  Some of them are also quite long, which would slow down your site considerably.  In order to fix these problems, you need to generate a production build of your site.  What this does is remove all of the indentation and spacing from each file and directly inserts the needed code where each one of the `import` statements is.  It also splits the code into multiple files that your site can load only as needed, which significantly speeds up your site.  To build your site, navigate to the client folder using the `cd [folder name]` command and run `npm run build`.  Do the same thing for the console folder and the functions folder.
+
+### Step 2: Connecting The Firebase CLI To Your Firebase Project
+
+Remember that Firebase CLI that you installed earlier?  It's time to use it to connect your project to your backend.  To do this, first run `firebase login` from the root folder of your project and proceed to log into your Google Account.  Once logged in, run `firebase use [project name]` with the name of your Firebase project to link your Hotplate project to your Firebase project.  Then, run `firebase target:add hosting client [default site name]` and `firebase target:add hosting console [console site name]`, using the names of the respective hosting sites, to allow you to control which hosting site you deploy to.
+
+### Step 3: Going Live
+
+Now for the big moment: deploying your site to the internet!  Once you feel ready, just run `firebase deploy` to publish your site to the internet.  This will take a few minutes, but once it's done, your site will be live on the internet.  Congratulations!  You are now the proud owner of a site powered by Hotplate!
+
+Now that your site is live, follow the Hotplate Site Setup guide to create the first admin account and get started with Hotplate Console.
