@@ -56,3 +56,85 @@ Hotplate uses Cloud Functions to enable multi-role authentication, delete user a
 ### Step 4: Setting Up Your Domain (Optional)
 
 If you plan to use a custom domain for your site, go buy one from [Google Domains](https://domains.google) or another provider of your choice.  Once you have a domain, follow [these instructions](https://firebase.google.com/docs/hosting/custom-domain?hl=en&authuser=0) to connect it to Firebase Hosting and [these instructions](https://firebase.google.com/docs/auth/email-custom-domain?hl=en&authuser=0) to set up emails from Firebase Authentication (don't worry, these articles explain how to do this much better than I could).
+
+## Part 3: Configuring Hotplate
+
+At this point, you've set up your editor and you've created your backend.  Now, it's time to configure Hotplate for your site.  Follow the steps below to get your site ready for deployment.
+
+### Step 1: Setting Up Git (Optional)
+
+Many developers use a version control system called Git to manage their projects.  You do not have to use Git, however, I would highly recommend it.  If you want to use Git, [download it](https://git-scm.com/) and install it on your computer.
+
+### Step 2: Downloading Hotplate
+
+#### Using Git
+
+To download Hotplate using Git, open a terminal and navigate to the folder where you want your project's folder to be located by using the `cd [folder name]` command.  Then, run `git clone https://github.com/awallach4/hotplate-sites.git [desired folder name]` to download Hotplate.
+
+#### Without Git
+
+If you don't want to use Git to download Hotplate, visit <https://github.com/awallach4/hotplate-sites> and download a .zip file of the code.
+
+### Step 3: Installing Dependencies
+
+Now that you have downloaded Hotplate, you'll need to install its dependencies for it to work.  Open a terminal and use the `cd [folder name]` command to navigate to your project folder.  Once there, run `npm install` to install all of the dependencies.  If you get a message saying that there are vulnerabilities, run `npm audit fix` to fix them.  If this doesn't work, there isn't really anything you can do.
+
+### Step 4: Configuring Your Site
+
+Open your project's folder in your IDE if you decided to install one.  Otherwise, you can follow along in your file explorer and basic text editor.  Then, find the following files and make the necessary edits.
+
+#### `client/index.html`
+
+Find the following lines of code and replace the *italicized* text with what is applicable for your site.
+
+`<title>``Hotplate Client`
+
+`<meta
+  name="description"
+  content="``This is a demo of the Hotplate Site Builder.`
+
+`<strong
+  >We're sorry but `*`Hotplate`*
+
+#### `client/vite.config.ts`
+
+Find the section of code below and replace `name: "Hotplate Client"` with `name: "[Your Site Name]"`, replacing the placeholder as appropriate.
+
+```typescript
+manifest: {
+  name: "Hotplate Client",
+  theme_color: "#121212",
+  icons: [
+    {
+      src: "android-chrome-192x192.png",
+      sizes: "192x192",
+      type: "image/png"
+    },
+    {
+      src: "android-chrome-512x512.png",
+      sizes: "512x512",
+      type: "image/png"
+    },
+    {
+      src: "android-chrome-maskable-192x192.png",
+      sizes: "192x192",
+      type: "image/png",
+      purpose: "maskable"
+    },
+    {
+      src: "android-chrome-maskable-512x512.png",
+      sizes: "512x512",
+      type: "image/png",
+      purpose: "maskable"
+    }
+  ]
+}
+```
+
+#### `client/public/` Folder
+
+Replace all of the files in this folder, except for `robots.txt` and `profile.png` with the icons for your site.  Use the original file names for the new icons.  You should also make sure that the new icons have the same dimensions as the original ones.  If you need help with the "maskable" icons, visit <https://maskable.app> to generate some.
+
+#### `client/src/CLIENT_CONFIG.ts`
+
+Replace all of the placeholders with the applicable values.  If you do not plan to use the calendar service, remove the placeholders, but only delete what is in between the quotation marks.  For the `firebaseConfig` variable, go to the project settings page on the Firebase Console and copy the object for the client app.  For the `recaptchaSiteKey` variable, go to the reCaptcha console and copy the site key for your site.
