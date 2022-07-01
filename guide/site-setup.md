@@ -22,7 +22,7 @@ Now that the first user account is ready, navigate to your site and log in with 
 
 ## Step 3: Setting Up Your Site
 
-Visit your site's console and log in using the account you created and verified.  You should be redirected to a page with this documentation embedded!  Once logged in, navigate to the Site Theme page and create both the light and dark themes for your website or use the defaults.  Remember to save when you're done by clicking the checkmark button on the bar at the top of the screen.  Then, go to the Site Settings page and enter the URL for the console, a Google Meet, Zoom, Webex, or other virtual meeting link if you need a button on your site for your users to click to enter a meeting.  Ignore the email and calendar service settings for now; you can set those up later if needed.  Remember to save on this page as well!
+Visit your site's console and log in using the account you created and verified.  You should be redirected to a page with this documentation embedded!  Once logged in, navigate to the Site Theme page and create both the light and dark themes for your website or use the defaults.  Remember to save when you're done by clicking the checkmark button on the bar at the top of the screen.  Then, go to the Site Settings page and enter the URL for the console and a Google Meet, Zoom, Webex, or other virtual meeting link if you need a button on your site for your users to click to enter a meeting.  Ignore the email and calendar service settings for now; you can set those up later if needed.  Remember to save on this page as well!
 
 ## Step 4: Creating Your First Page
 
