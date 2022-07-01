@@ -1,7 +1,7 @@
 var getSidebar = require("./getSidebar")
 
 module.exports = {
-  title: "Hotplate Sites",
+  title: "Hotplate",
   description: "An Open Source Site Builder",
   head: [
     ["meta", {name: "viewport", content: "width=device-width,initial-scale=1.0"}],
