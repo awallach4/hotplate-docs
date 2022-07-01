@@ -42,6 +42,6 @@ At this point, everything should be set up!  Just run `firebase deploy`, wait a 
 
 #### Avoiding Billing
 
-To avoid billing for Firebase Functions deployments, make sure you have the latest version of the Firebase CLI.  Then, deploy everything except for functions and then deploy each function individually.
+To avoid billing for Firebase Functions deployments, make sure you have the latest version of the Firebase CLI.  Then, deploy everything except for functions and extensions and then deploy each function individually.  Make sure to deploy the `clearData` function located in `functions/src/interrimDeleteUserData.ts` to replace the Delete User Data extension, as installing the extension will use Container Registry (not free) instead of Artifact Registry until Google updated the extension.
 
 Now that your site is live, follow the Site Setup guide to create the first admin account and get started with Hotplate Console.
