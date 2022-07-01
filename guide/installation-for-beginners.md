@@ -175,4 +175,4 @@ Remember that Firebase CLI that you installed earlier?  It's time to use it to c
 
 Now for the big moment: deploying your site to the internet!  Once you feel ready, just run `firebase deploy` to publish your site to the internet.  This will take a few minutes, but once it's done, your site will be live on the internet.  Congratulations!  You are now the proud owner of a site powered by Hotplate!
 
-Now that your site is live, follow the Hotplate Site Setup guide to create the first admin account and get started with Hotplate Console.
+Now that your site is live, follow the Site Setup guide to create the first admin account and get started with Hotplate Console.
