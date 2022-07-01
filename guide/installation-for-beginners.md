@@ -51,7 +51,7 @@ A backend without any resources is not very useful.  To start, add two web apps 
 
 ### Step 3: Setting Up Cloud Functions
 
-Hotplate uses Cloud Functions to enable multi-role authentication, delete user account data when a user deletes their account, and make weekly backups of your database.  Unfortunately, due to changes that Google made a few years ago, you must subscribe to the "Blaze" billing plan to be able to use Cloud Functions.  While this requires creating a billing account, you'll only be charged a few cents per month.  As soon as any change to this is made in the future, I will work diligently to update Hotplate to implement that change.  For now, set up your billing account and then set the location for your functions to a region close to your users, if it needs to be set.  Then, go back to Cloud Storage and create another bucket in a region close to your users for your weekly Firestore backups if you want them to occur.
+Hotplate uses Cloud Functions to enable multi-role authentication, delete user account data when a user deletes their account, and make weekly backups of your database.  Unfortunately, due to changes that Google made a few years ago, you must subscribe to the "Blaze" billing plan to be able to use Cloud Functions.  While this requires creating a billing account, you won't be charged anything unless you exceed the free tier.  For now, set up your billing account and then set the location for your functions to a region close to your users, if it needs to be set.  Then, go back to Cloud Storage and create another bucket in a region close to your users (choose `us-central-1`, `us-east-1`, or `us-west-1` and the standard storage class to avoid billing) for your weekly Firestore backups if you want them to occur.
 
 ### Step 4: Setting Up App Check
 
@@ -174,5 +174,13 @@ Remember that Firebase CLI that you installed earlier?  It's time to use it to c
 ### Step 3: Going Live
 
 Now for the big moment: deploying your site to the internet!  Once you feel ready, just run `firebase deploy` to publish your site to the internet.  This will take a few minutes, but once it's done, your site will be live on the internet.  Congratulations!  You are now the proud owner of a site powered by Hotplate!
+
+#### Avoiding Billing
+
+If you want to avoid billing, make sure that you install the latest version of the Firebase CLI by running `npm i -g firebase-tools` and deploying your functions one at a time.  Run the commands below:
+
+`firebase deploy --except functions`
+
+`firebase deploy --only functions:[function name]` for each function
 
 Now that your site is live, follow the Site Setup guide to create the first admin account and get started with Hotplate Console.
