@@ -179,8 +179,10 @@ Now for the big moment: deploying your site to the internet!  Once you feel read
 
 If you want to avoid billing, make sure that you install the latest version of the Firebase CLI by running `npm i -g firebase-tools` and deploying your functions one at a time.  Run the commands below:
 
-`firebase deploy --except functions`
+`firebase deploy --except functions,extensions`
 
-`firebase deploy --only functions:[function name]` for each function
+`firebase deploy --only functions:[function name]` for each function, including the `clearData` function located in `functions/src/interrimDeleteUserData.ts`.
+
+Do not deploy extensions until Google has updated them to use Artifact Registry instead of Container Registry.
 
 Now that your site is live, follow the Site Setup guide to create the first admin account and get started with Hotplate Console.
