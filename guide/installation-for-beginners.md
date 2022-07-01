@@ -91,14 +91,17 @@ Open your project's folder in your IDE if you decided to install one.  Otherwise
 
 Find the following lines of code and replace the *italicized* text with what is applicable for your site.
 
-`<title>``Hotplate Client`
+`<title>`*Hotplate Client*`</title>`
 
 `<meta
   name="description"
-  content="``This is a demo of the Hotplate Site Builder.`
+  content="`*This is a demo of the Hotplate Site Builder.*`"
+/>`
 
-`<strong
-  >We're sorry but `*`Hotplate`*
+`<strong`\
+  `>We're sorry but` *Hotplate* `doesn't work properly`\
+  `without JavaScript enabled. Please enable it to continue.</strong`\
+`>`
 
 #### `client/vite.config.ts` and `console/vite.config.ts`
 
