@@ -40,4 +40,8 @@ Navigate to the `client` directory and run `npm install` and `npm run build` to 
 
 At this point, everything should be set up!  Just run `firebase deploy`, wait a few minutes, and your site should be live!
 
+#### Avoiding Billing
+
+To avoid billing for Firebase Functions deployments, make sure you have the latest version of the Firebase CLI.  Then, deploy everything except for functions and then deploy each function individually.
+
 Now that your site is live, follow the Site Setup guide to create the first admin account and get started with Hotplate Console.
