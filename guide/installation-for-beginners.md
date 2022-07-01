@@ -1,8 +1,8 @@
 ---
-title: Installation - For Beginners
+title: Beginner's Guide
 date: 2022-07-01T00:05:24.865Z
 ---
-# Installation - For Beginners
+# Beginner's Guide
 
 ## Getting Started
 
