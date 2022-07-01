@@ -2,11 +2,11 @@
 title: Introduction
 date: 2022-06-30T01:08:52.134Z
 ---
-# Getting Started
+# Introduction
 
-## Want to try Hotplate for yourself?
+## Live Demo
 
-Head on over to [hotplate-demo.web.app](https://hotplate-demo.web.app) and use the login information below to sign in as either a webmaster or basic user so you can see what Hotplate is capable of (sorry, no admin logins; never trust a client!). If you want to see Hotplate's user management dashboard in action, you'll have to create your own site.
+Head on over to <https://hotplate-demo.web.app> and use the login information below to sign in as either a webmaster or basic user so you can see what Hotplate is capable of (sorry, no admin logins; never trust a client!). If you want to see Hotplate's user management dashboard in action, you'll have to create your own site.
 
 * Webmaster:
 
@@ -17,23 +17,19 @@ Head on over to [hotplate-demo.web.app](https://hotplate-demo.web.app) and use t
   * Email: test-user@hotplate.com (this is a fake email address, please don't use it anywhere else or send anything to it.)
   * Password: S0_B@sic!
 
-## Want to create your own site with Hotplate?
-
-It's great to hear that you want to use Hotplate for your next website! Many site builders out there either show ads or charge an inflated price, but Hotplate is completely free! The world wide web deserves a high-quality and user-friendly site builder that serves its users, NOT its creator! Just clone the [GitHub repository](https://github.com/awallach4/hotplate-sites), set up your [Firebase project](https://console.firebase.google.com/), and you'll be on your way!
-
-*Note: You'll need to subscribe to the Firebase "Blaze" (paid) plan to be able to set up Hotplate's authentication system. You'll only be charged about $0.01/month, though.*
-
-### What about the Email Service and Calendar Service?
-
-Hotplate comes with a pre-built email and calendar service that are both powered by Google Apps Script. If you don't want to use these, all you have to do is not enter a script URL for either on the site settings page. To use these services, create a Firebase service account with Firestore read permissions, replace the placeholders in both the EmailService.js and CalendarService.js files, and deploy them to Google Apps Script. *Neither of these services will work in this demo.*
-
-Oh, and did I mention, there's no "catch" to Hotplate being free. I'm not asking for sponsors, donations, subscriptions, premium version fees, ad-free fees, or anything like that. Aside from what you pay Firebase for the backend and your hosting domain (if you choose to buy a different one), your site is free! Just make sure to follow the terms of the attached license file.
+*Note: The built-in email and calendar services will not work in this demo.*
 
 ## About Hotplate
 
-Hotplate began as an open-source project to build a schemaless content management system that stored data in the Firebase [Cloud Firestore](https://firebase.google.com/products/firestore?authuser=0&hl=en) database. The owner of that project then let me reverse-engineer it to understand how it worked. During this process, I noticed a file called `components.js` that defined the structure of the database. From that point, I rebuilt Hotplate to retrieve this structure from an additional collection in the Firestore database, allowing the user to define their own page structure without knowing how to program a website. After 7 months of work, I released the first version of Hotplate as a replacement website for my Boy Scout Troop. This version met their needs but contained a lot of bugs, confusing code, and a poor database structure. Three months later, I released the second version that converted my code to Typescript and the Vue Class Component API and redefined the database structure. Although a few additions were made about 5 months later, this version of Hotplate has been live for over a year, running smoothly for my troop. Now, Hotplate is finally public and rewritten in the Vue Composition API with yet another database structure that will allow for future implementation of subpages. What was once a simple CMS is now a full-scale site builder that implements multi-role authentication, dynamic theme management, and complex components such as signup sheets and a message board built to resemble the Google Classroom stream.
+Hotplate began as an open-source project to build a schemaless content management system that stored data in the Firebase [Cloud Firestore](https://firebase.google.com/products/firestore?authuser=0&hl=en) database. The owner of that project then let me reverse-engineer it to understand how it worked. During this process, I noticed a file called `index.js` that defined the structure of the database. From that point, I rebuilt Hotplate to retrieve this structure from an additional collection in the Firestore database, allowing the user to define their own page structure without knowing how to program a website. After 7 months of work, I released the first version of Hotplate as a replacement website for my Boy Scout Troop's Shutterfly Share Site. This version met their needs but contained a lot of bugs, confusing code, and a poor database structure. Three months later, I released the second version that converted my code to Typescript and the Vue Class Component API and redefined the database structure. Although a few additions were made about 5 months later, this version of Hotplate has been live for over a year, running smoothly for my troop. Now, Hotplate is finally public and rewritten in the Vue Composition API with yet another database structure that will allow for future implementation of subpages. What was once a simple CMS is now a full-scale site builder that implements multi-role authentication, dynamic theme management, and complex components such as signup sheets, a message board featuring posts and comments, and an integrated email and calendar service using [Google Apps Script](https://script.google.com).
 
-### Dependencies
+## Why Hotplate?
+
+Many free site builders already exist on the internet, such as Google Sites, WordPress, Wix, Weebly, and Shutterfly Share Sites, to name a few.  Many of these site builder services display intrusive ads on your site, make you pay if you want to use "premium" features, don't securely serve your content, limit the number of users you can have, and don't offer solutions such as multi-role authentication and an integrated signup sheet application.  What's more?  These plug-and-play site builders give you very little to play with in terms of how your site looks, what components are available, and what you can do with the backend.  Hotplate addresses these issues by giving you complete control over your site.  Let's be clear; **you control the Firebase backend that your site runs on**.  This means that you control the authentication system, database, file storage, and hosting AND you get free analytics and performance monitoring.  Hotplate is also open source, so you are free to completely reverse engineer it and add your own components, change existing components and features, or remove anything you want from it to build exactly the site you need.  *The tradeoff?  You'll need to be able to run basic terminal commands, edit specific strings in HTML and Typescript files, and spin up your Firebase project.*  Even if you've never worked with a site builder before, this guide should be enough to get you started with Hotplate.
+
+Oh, and did I mention, there's no "catch" to Hotplate being free. I'm not asking for sponsors, donations, subscriptions, premium version fees, ad-free fees, or anything like that. Aside from what you pay Firebase for the backend and your hosting domain (if you choose to buy a different one), your site is free! Just make sure to follow the terms of the attached license file.
+
+## Dependencies
 
 Hotplate would not be possible without the following libraries:
 
