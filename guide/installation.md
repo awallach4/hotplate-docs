@@ -4,8 +4,6 @@ date: 2022-06-29T21:41:10.197Z
 ---
 # Installation
 
-## Getting Started
-
 This page is for those who already have some experience with Vue and Firebase and are just looking for how to configure Hotplate.  Everyone else should check out the beginner's guide for a detailed installation process.
 
 ## Setting Up Your Backend
