@@ -37,8 +37,18 @@ At this point, you've set up your computer to be able to create your site.  Your
 
 ### Step 1: Creating a Firebase Project
 
-Log into your Google Account and visit <https://console.firebase.google.com>.  Then, create a new project and name it accordingly.  When prompted to set up Google Analytics, create a new analytics account or use an existing one if you have one.  Then, wait a few minutes and you'll have just created the core of a website!
+Log into your Google Account and visit <https://console.firebase.google.com>.  Then, create a new project and name it accordingly.  When prompted to set up Google Analytics, create a new analytics account or use an existing one if you have one.  If it asks you about creating a hosting site, you can either do that now or later.  Then, wait a few minutes and you'll have just created the core of a website!
 
 ### Step 2: Adding Apps & Resources To Your Project
 
-A backend without any resources is not very useful.
+A backend without any resources is not very useful.  To start, add two web apps (one for Hotplate Client and one for Hotplate Console) to your Firebase Project.  Next, follow the list below to set up each service in your project:
+
+* Authentication: This service manages your users.  For now, go to the sign-in providers tab and enable the email/password option (do not turn on email/link).
+* Cloud Firestore: This service stores all of the content on your site in a No-SQL database (don't worry about what that means).  To set up your database, create a new one and choose a location near all of your users (I recommend the multi-region locations).  For the rules, you can choose either set, as deploying Hotplate will overwrite them anyway.
+* Realtime Database: Don't set this up.
+* Cloud Storage: This service stores all of the images, files, and whatever else you upload to your site.  The default storage bucket will automatically be created for you in the region that you chose for Firestore, so just set it up using either set of rules, as deploying Hotplate will also overwrite these rules.
+* Hosting: This service makes your site accessible on the internet.  Create the default site, as well as a second site for the console.  Don't worry about the custom domain for now.  Then, go to the project settings and link each of your apps to the respective hosting sites.
+
+### Step 3: Setting Up Cloud Functions
+
+Hotplate uses Cloud Functions to enable multi-role authentication, delete user account data when a user deletes their account, and make weekly backups of your database.  Unfortunately, due to changes that Google made a few years ago, you must subscribe to the "Blaze" billing plan to be able to use Cloud Functions.  While this requires creating a billing account, you'll only be charged a few cents per month.  As soon as any change to this is made in the future, I will work diligently to update Hotplate to implement that change.  For now, set up your billing account and then set the location for your functions to a region close to your users.  Then, go back to Cloud Storage and create another bucket in a region close to your users for your weekly Firestore backups if you want them to occur.
