@@ -96,7 +96,7 @@ Find the following lines of code and replace the *italicized* text with what is 
 `<strong
   >We're sorry but `*`Hotplate`*
 
-#### `client/vite.config.ts`
+#### `client/vite.config.ts` and `console/vite.config.ts`
 
 Find the section of code below and replace `name: "Hotplate Client"` with `name: "[Your Site Name]"`, replacing the placeholder as appropriate.
 
@@ -131,10 +131,23 @@ manifest: {
 }
 ```
 
-#### `client/public/` Folder
+#### `client/public/` Folder and `console/public/` Folder
 
 Replace all of the files in this folder, except for `robots.txt` and `profile.png` with the icons for your site.  Use the original file names for the new icons.  You should also make sure that the new icons have the same dimensions as the original ones.  If you need help with the "maskable" icons, visit <https://maskable.app> to generate some.
 
-#### `client/src/CLIENT_CONFIG.ts`
+#### `client/src/CLIENT_CONFIG.ts` and `console/src/CONSOLE_CONFIG.ts`
 
 Replace all of the placeholders with the applicable values.  If you do not plan to use the calendar service, remove the placeholders, but only delete what is in between the quotation marks.  For the `firebaseConfig` variable, go to the project settings page on the Firebase Console and copy the object for the client app.  For the `recaptchaSiteKey` variable, go to the reCaptcha console and copy the site key for your site.
+
+#### `console/index.html`
+
+Replace the content in between the `<title>` tags and the `<noscript>` tags in the same manner that you did for the client app.
+
+#### `functions/src/scheduledFirestoreExport.ts`
+
+If you want to backup your Firestore database, replace the placeholder for the `bucket` variable with the ID of the Cloud Storage bucket that you created for the backups.  If you do not want to backup your database, delete this file and then remove the following lines from `functions/src/index.ts`.
+
+* `import scheduledFirestoreExport from "./scheduledFirestoreExport";`
+* `scheduledFirestoreExport,`
+
+Congratulations!  You just configured your site for deployment!
