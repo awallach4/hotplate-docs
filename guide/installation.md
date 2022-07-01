@@ -14,7 +14,7 @@ Head to the [Firebase Console](https://console.firebase.google.com) and create y
 
 ### Downloading Hotplate
 
-If you're a Git user (which you should be), open a terminal and run `git clone https://github.com/awallach4/hotplate-sites.git` to clone the repository to your computer.  If you don't use Git, go to the [Hotplate Sites Github repository](https://github.com/awallach4/hotplate-sites) and download the .zip folder and extract it.  Then, open this folder in your editor.
+If you're a Git user (which you should be), open a terminal and run `git clone https://github.com/awallach4/hotplate-sites.git` to clone the repository to your computer.  If you don't use Git, go to the [Hotplate Github repository](https://github.com/awallach4/hotplate-sites) and download the .zip folder and extract it.  Then, open this folder in your editor.
 
 ### Configuring Hotplate for your Site
 
