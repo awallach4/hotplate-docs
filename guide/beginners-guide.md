@@ -165,11 +165,11 @@ Your backend is now set up and you've configured Hotplate for your site.  Now, i
 
 ### Step 1: Building Your Site's Code
 
-If you were to look through all of the files in your project, you probably would not understand it without coding experience, but it would at least look like the bits of HTML and Javascript that you have seen.  While these files contain code that is functional, each file contains only a snippet of your site.  Some of them are also quite long, which would slow down your site considerably.  In order to fix these problems, you need to generate a production build of your site.  What this does is remove all of the indentation and spacing from each file and directly inserts the needed code where each one of the `import` statements is.  It also splits the code into multiple files that your site can load only as needed, which significantly speeds up your site.  To build your site, navigate to the client folder using the `cd [folder name]` command and run `npm run build`.  Do the same thing for the console folder and the functions folder.
+If you were to look through all of the files in your project, you probably would not understand it without coding experience, but it would at least look like the bits of HTML and Javascript that you have seen.  While these files contain code that is functional, each file contains only a snippet of your site.  Some of them are also quite long, which would slow down your site considerably.  In order to fix these problems, you need to generate a production build of your site.  What this does is remove all of the indentation and spacing from each file and directly insert the needed code where each one of the `import` statements is.  It also splits the code into multiple files that your site can load only as needed, which significantly speeds up your site.  To build your site, navigate to the client folder using the `cd [folder name]` command and run `npm run build`.  Do the same thing for the console folder and the functions folder.
 
 ### Step 2: Connecting The Firebase CLI To Your Firebase Project
 
-Remember that Firebase CLI that you installed earlier?  It's time to use it to connect your project to your backend.  To do this, first run `firebase login` from the root folder of your project and proceed to log into your Google Account.  Once logged in, run `firebase use [project name]` with the name of your Firebase project to link your Hotplate project to your Firebase project.  Then, run `firebase target:add hosting client [default site name]` and `firebase target:add hosting console [console site name]`, using the names of the respective hosting sites, to allow you to control which hosting site you deploy to.
+Remember that Firebase CLI that you installed earlier?  It's time to use it to connect your project to your backend.  To do this, run `firebase login` from the root folder of your project and proceed to log into your Google Account.  Once logged in, run `firebase use [project name]` with the name of your Firebase project to link your Hotplate project to your Firebase project.  Then, run `firebase target:add hosting client [default site name]` and `firebase target:add hosting console [console site name]`, using the names of the respective hosting sites, to allow you to control which hosting site you deploy to.
 
 ### Step 3: Going Live
 
@@ -177,7 +177,7 @@ Now for the big moment: deploying your site to the internet!  Once you feel read
 
 #### Avoiding Billing
 
-If you want to avoid billing, make sure that you install the latest version of the Firebase CLI by running `npm i -g firebase-tools` and deploying your functions one at a time.  Run the commands below:
+If you want to avoid billing, install the latest version of the Firebase CLI by running `npm i -g firebase-tools` and then deploy your functions one at a time.  Run the commands below:
 
 `firebase deploy --except functions,extensions`
 
