@@ -43,6 +43,8 @@ There are several common features of every component.  Refer to the diagram abov
 
 ### Arranging Components
 
+**Known Issue: When dragging a component for the first time after loading the page, it will jump to the top of the page.  This is an issue with the Vuedraggable library that enables this feature.**
+
 Hotplate allows you to easily rearrange components by dragging them into place by their handle.  To rearrange components, grab one by the handle and drag it to the desired location.  Also, components take up the full width of the page unless they are placed inside the Column Layout component.  To do this, add a Column Layout component to your page, select the desired number of columns, and then drag your components into the columns where you'd like your users to see them.  If you hide or delete the Column Layout component, the components inside of it will be hidden or deleted as well.
 
 ## Remember to save after making changes to a page or its components!
