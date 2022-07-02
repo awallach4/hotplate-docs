@@ -55,7 +55,7 @@ Hotplate uses Cloud Functions to enable multi-role authentication, delete user a
 
 ### Step 4: Setting Up App Check
 
-Firebase has a security feature called App Check that integrated with reCaptcha v3 to prevent abusive traffic, such as robots, from accessing your site.  Additionally, App Check prevents users from accessing your site by stealing the configuration for your site and hosting it elsewhere.  To set up App Check, first set up your site with reCaptcha v3 by creating a new site in the [reCaptcha admin panel](https://google.com/recaptcha/admin).  Once this is done, copy the secret key and use it to register your apps with reCaptcha v3 in the Firebase Console.  **Do not share this key with anyone!  Also, only add your production domains to the list of authorized domains in the reCaptcha admin panel.**
+Firebase has a security feature called App Check that integrates with reCaptcha v3 to prevent abusive traffic, such as robots, from accessing your site.  Additionally, App Check prevents users from accessing your site by stealing the configuration for your site and hosting it elsewhere.  To set up App Check, first set up your site with reCaptcha v3 by creating a new site in the [reCaptcha admin panel](https://google.com/recaptcha/admin).  Once this is done, copy the secret key and use it to register your apps with reCaptcha v3 in the Firebase Console.  **Do not share this key with anyone!  Also, only add your production domains to the list of authorized domains in the reCaptcha admin panel.**
 
 ### Step 5: Setting Up Your Domain (Optional)
 
