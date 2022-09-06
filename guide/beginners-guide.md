@@ -43,7 +43,7 @@ Log into your Google Account and visit <https://console.firebase.google.com>.  T
 
 A backend without any resources is not very useful.  To start, add two web apps (one for Hotplate Client and one for Hotplate Console) to your Firebase Project.  Next, follow the list below to set up each service in your project:
 
-* Authentication: This service manages your users.  For now, go to the sign-in providers tab and enable the email/password option (do not turn on email/link).
+* Authentication: This service manages your users.  For now, go to the sign-in providers tab and enable the email/password option (do not turn on email/link).  Then, go to the settings tab and upgrade to Firebase Authentication with Identity Platform.  Once you deploy your Cloud Functions in a later step, select the `beforeCreate` function as the account creation blocking function under the blocking functions tab.
 * Cloud Firestore: This service stores all of the content on your site in a No-SQL database (don't worry about what that means).  To set up your database, create a new one and choose a location near all of your users (I recommend the multi-region locations).  For the rules, you can choose either set, as deploying Hotplate will overwrite them anyway.
 * Realtime Database: Don't set this up.
 * Cloud Storage: This service stores all of the images, files, and whatever else you upload to your site.  The default storage bucket will automatically be created for you in the region that you chose for Firestore, so just set it up using either set of rules, as deploying Hotplate will also overwrite these rules.
@@ -85,77 +85,11 @@ Now that you have downloaded Hotplate, you'll need to install its dependencies f
 
 ### Step 4: Configuring Your Site
 
-Open your project's folder in your IDE if you decided to install one.  Otherwise, you can follow along in your file explorer and basic text editor.  Then, find the following files and make the necessary edits.
-
-#### `client/index.html`
-
-Find the following lines of code and replace the *italicized* text with what is applicable for your site.
-
-`<title>`*Hotplate Client*`</title>`
-
-`<meta
-  name="description"
-  content="`*This is a demo of the Hotplate Site Builder.*`"
-/>`
-
-`<strong`\
-  `>We're sorry but` *Hotplate* `doesn't work properly`\
-  `without JavaScript enabled. Please enable it to continue.</strong`\
-`>`
-
-#### `client/vite.config.ts` and `console/vite.config.ts`
-
-Find the section of code below and replace `name: "Hotplate Client"` with `name: "[Your Site Name]"`, replacing the placeholder as appropriate.
-
-```typescript
-manifest: {
-  name: "Hotplate Client",
-  theme_color: "#121212",
-  icons: [
-    {
-      src: "android-chrome-192x192.png",
-      sizes: "192x192",
-      type: "image/png"
-    },
-    {
-      src: "android-chrome-512x512.png",
-      sizes: "512x512",
-      type: "image/png"
-    },
-    {
-      src: "android-chrome-maskable-192x192.png",
-      sizes: "192x192",
-      type: "image/png",
-      purpose: "maskable"
-    },
-    {
-      src: "android-chrome-maskable-512x512.png",
-      sizes: "512x512",
-      type: "image/png",
-      purpose: "maskable"
-    }
-  ]
-}
-```
+Open your project's folder in your IDE if you decided to install one.  Otherwise, you can use your file explorer and basic text editor.  To configure your site, make a copy of the `hotplateConfig.ts.template` file and rename it to `hotplateConfig.ts`.  In this file, replace all of the placeholders as appropriate.
 
 #### `client/public/` Folder and `console/public/` Folder
 
 Replace all of the files in this folder, except for `robots.txt` and `profile.png` with the icons for your site.  Use the original file names for the new icons.  You should also make sure that the new icons have the same dimensions as the original ones.  If you need help with the "maskable" icons, visit <https://maskable.app> to generate some.
-
-#### `client/src/CLIENT_CONFIG.ts` and `console/src/CONSOLE_CONFIG.ts`
-
-Replace all of the placeholders with the applicable values.  If you do not plan to use the calendar service, remove the placeholders, but only delete what is in between the quotation marks, otherwise follow the guide on the email and calendar services to learn what to paste here.  For the `firebaseConfig` variable, go to the project settings page on the Firebase Console and copy the object for the client app.  For the `recaptchaSiteKey` variable, go to the reCaptcha console and copy the site key for your site.
-
-#### `console/index.html`
-
-Replace the content in between the `<title>` tags and the `<noscript>` tags in the same manner that you did for the client app.
-
-#### `functions/src/scheduledFirestoreExport.ts`
-
-If you want to backup your Firestore database, replace the placeholder for the `bucket` variable with the ID of the Cloud Storage bucket that you created for the backups.  If you do not want to backup your database, delete this file and then remove the following lines from `functions/src/index.ts`.
-
-* `import scheduledFirestoreExport from "./scheduledFirestoreExport";`
-* `scheduledFirestoreExport,`
 
 Congratulations!  You just configured your site for deployment!
 
