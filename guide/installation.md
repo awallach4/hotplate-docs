@@ -8,7 +8,7 @@ This page is for those who already have some experience with Vue and Firebase an
 
 ## Setting Up Your Backend
 
-Head to the [Firebase Console](https://console.firebase.google.com) and create yourself a project.  **You'll need to set up a billing account on the "Blaze" plan to be able to deploy Hotplate, as it uses Cloud Functions to support multi-role authentication**.  Next, create two web apps, one for Hotplate Client and one for Hotplate Console.  Then, set up email/password authentication, Cloud Firestore, Cloud Storage, Hosting, Cloud Functions, and App Check with reCaptcha v3.  If you want to use the `scheduledFirestoreExport` function to backup your Firestore database, create a second storage bucket for the backups.  You should also create a second hosting site for Hotplate Console and link your apps to their respective sites.
+Head to the [Firebase Console](https://console.firebase.google.com) and create yourself a project.  **You'll need to set up a billing account on the "Blaze" plan to be able to deploy Hotplate, as it uses Cloud Functions to support multi-role authentication**.  Next, create two web apps, one for Hotplate Client and one for Hotplate Console.  Then, set up email/password authentication, Cloud Firestore, Cloud Storage, Hosting, Cloud Functions, and App Check with reCaptcha v3.  If you want to use the `scheduledFirestoreExport` function to backup your Firestore database, create a second storage bucket for the backups.  You should also create a second hosting site for Hotplate Console and link your apps to their respective sites.  For authentication to work properly, you will also need to upgrade to Firebase Authentication with Identity Platform and use the `beforeCreate` function that you will deploy as the account creation blocking function.
 
 ## Setting Up Hotplate
 
@@ -20,15 +20,8 @@ If you're a Git user (which you should be), open a terminal and run `git clone h
 
 Here is a list of the things that you will need to change in Hotplate's code before you deploy your site:
 
-* `client/index.html` - Change the `<title>`, `<meta name="description">`, and `<noscript>` content to whatever you want for your site.
-* `client/vite.config.ts` - Change the name in the manifest object to your site's name (this is for future PWA support).
-* `client/public/` directory - Replace all of the files in this folder, except for `robots.txt` and `profile.png`, with the icons for your site.  **The new files must have the same names**.  You can learn about the maskable icons at <https://web.dev/maskable-icon/>, but you should reference the existing icons for the required sizes.
-* `client/CLIENT_CONFIG.ts` - Replace all of the placeholders with the applicable values.  If you are not planning to use the email or calendar services, you can leave the calendar service values unchanged, otherwise, follow the guide on setting up the email and calendar services.
-* `console/index.html` - Change the `<title>` and `<noscript>` content to whatever you want for your site's admin console.
-* `console/vite.config.ts` - Change the name in the manifest object to your site's name (this is for future PWA support).
-* `console/public/` directory - Replace all of the files in this folder, except for `robots.txt` and `profile.png`, with the icons for your site.  **The new files must have the same names**.  You can learn about the maskable icons at <https://web.dev/maskable-icon/>, but you should reference the existing icons for the required sizes.
-* `console/CONSOLE_CONFIG.ts` - Replace all of the placeholders with the applicable values.  If you are not planning to use the email or calendar services, you can leave the calendar service values unchanged, otherwise, follow the guide on setting up the email and calendar services.
-* `functions/src/scheduledFirestoreExport.ts` - If you want to backup your Firestore database, replace the `bucket` variable placeholder with the storage bucket where you want to store your database backups.  Otherwise, delete this file and delete the imports of this file from `functions/src/index.ts`.
+* `hotplateConfig.ts.template` - Make a copy of this file and rename it to `hotplateConfig.ts`.  Then, replace all of the placeholders with the appropriate values.
+* `client/public/` and `console/public` directories - Replace all of the files in this folder, except for `robots.txt` and `profile.png`, with the icons for your site.  **The new files must have the same names**.  You can learn about the maskable icons at <https://web.dev/maskable-icon/>, but you should reference the existing icons for the required sizes.
 
 Once all of these placeholders have been changed, your site is ready.
 
