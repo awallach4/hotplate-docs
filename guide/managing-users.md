@@ -4,11 +4,11 @@ date: 2022-07-02T02:44:37.517Z
 ---
 # Managing Users
 
-Hotplate Console features a user management dashboard that can create, manage, and delete users.  Since Hotplate is set up to be invite-only, you must create users through this dashboard rather than through a form on your site or through the Firebase Console.  Only site administrators will have access to this page.
+Hotplate Console features a user management dashboard that can create, manage, and delete users.  You can also configure Hotplate to be invite-only, which requires you to create users through this dashboard rather than through a form on your site.  Only site administrators will have access to this page.
 
 ## Adding a User
 
-To add a user, simply enter the new user's username and email address in the user creation form and submit it.  This will create the new user's account and send them an email with their password.  **If you have not set up the email service for your site, you will receive an error message**.  In this case, the user account will still have successfully been created, and the new user will need to use the password reset form before logging into their account for the first time.
+To add a user, simply enter the new user's email address in the user creation form and submit it.  This will add the new user's email address to the `new-users` collection which will allow them to create their account.  If you have set up the email service, you can also choose to send the new user an email notifying them of the invitation.  To create their account, the new user simply needs to go to the "Register" page and use the email address that was invited.
 
 ## Managing Users
 
